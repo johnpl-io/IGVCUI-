@@ -15,6 +15,11 @@
   <center> <canvas id = 'foo'></canvas> </center>
  <script src = "basicgauge.js">
 </script>
+  <script type="text/javascript">
+    window.addEventListener('mousemove', function(e) {
+      console.log(e);
+    });
+    </script>    
   <script> 
     gauge.set(1500);
     </script>
