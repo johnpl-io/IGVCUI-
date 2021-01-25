@@ -1,0 +1,26 @@
+{
+  "name": "igvcui-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpl-io/IGVCUI-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnpl-io/IGVCUI-/issues"
+  },
+  "homepage": "https://github.com/johnpl-io/IGVCUI-#readme",
+  "dependencies": {
+    "node-gyp": "^7.1.2",
+    "zoomooz": "^1.0.0"
+  }
+}
