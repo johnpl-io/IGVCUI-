@@ -4,7 +4,7 @@ const port = 8000
 const zoomooz = require('zoomooz')
 const server = http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html'})
-    fs.readFile('node_modules/zoomooz/examples/hierarchy/index.html', function(error, data) {
+    fs.readFile('index.html', function(error, data) {
     if(error) {
         res.writeHead(404)
         res.write('Error: File Not Found')
