@@ -1,6 +1,7 @@
-/*const http = require('http')
+const http = require('http')
 const fs = require('fs')
 const port = 8000
+/*
 const zoomooz = require('zoomooz')
 const server = http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html'})
@@ -41,22 +42,29 @@ function TEXT(text) {
   return Buffer.from(`${text}\0`, "ucs2"); 
 } 
 
-// Import user32 library
-const user32 = new ffi.Library("user32", {
-  "MessageBoxW": [
-    "int32", ["int32", "string", "string", "int32"]
+// import mathLibrary
+const mathLibrary = new ffi.Library("./MathLibrary", {
+  "Subtract": [
+      "int", ["int", "int"]
   ],
-  "SetCursorPos": [
-    "bool", ["int32", "int32"]
+  "Add": [
+      "int", ["int", "int"]
   ]
 });
 
-// Call function
-const OK_or_Cancel = user32.MessageBoxW(
-  0, TEXT("Hellow from Node.js!"), TEXT("Hellow World!"), 1
-)
+console.log(mathLibrary.Add(15, 5));
+console.log(mathLibrary.Subtract(15, 5));
 
-console.log(OK_or_Cancel);
-
-user32.SetCursorPos(0, 0); 
-
+const server = http.createServer(function(req, res) {
+  res.write(mathLibrary.Add(15, 5).toString())
+  res.end()
+     })
+     server.listen(port, function(error) {
+      if (error) {
+          console.log('Something went wrong', error) 
+      
+      }
+      else {
+      console.log('Server is listening on port ' + port)
+      }
+      })
