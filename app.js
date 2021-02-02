@@ -45,7 +45,7 @@ function TEXT(text) {
 // import mathLibrary
 const mathLibrary = new ffi.Library("./MathLibrary", {
   "Subtract": [
-      "int", ["int", "int"]
+      "int", ["int", "int"] //return type ,[parameters]
   ],
   "Add": [
       "int", ["int", "int"]
