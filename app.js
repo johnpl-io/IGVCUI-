@@ -2,32 +2,7 @@ const http = require('http')
 const fs = require('fs')
 const port = 8000
 
-/*
-const zoomooz = require('zoomooz')
-const server = http.createServer(function(req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html'})
-    fs.readFile('index.html', function(error, data) {
-    if(error) {
-        res.writeHead(404)
-        res.write('Error: File Not Found')
-    } else {
-        res.write(data)
-    }
-    res.end()
-    })
 
-  
-})
-
-server.listen(port, function(error) {
-if (error) {
-    console.log('Something went wrong', error) 
-
-}
-else {
-console.log('Server is listening on port ' + port)
-}
-})
 
 
 const msg1 = "test";
@@ -44,18 +19,24 @@ function TEXT(text) {
 } 
 
 // import mathLibrary
-const mathLibrary = new ffi.Library("./MathLibrary", {
+const mathLibrary = new ffi.Library("./test", {
   "Subtract": [
       "int", ["int", "int"] //return type ,[parameters]
   ],
   "Add": [
       "int", ["int", "int"]
-  ]
+  ],
+  "RandomNum": [
+    "int", []
+]
+
 });
 
 console.log(mathLibrary.Add(15, 5));
-console.log(mathLibrary.Subtract(15, 5));
+function myFunction() {
 
+  setInterval(function(){document.getElementById("demo").innerHTML = mathLibrary.RandomNum(); }, 1);
+}
 const server = http.createServer(function(req, res) {
   res.write(mathLibrary.Add(15, 5).toString())
   res.end()
@@ -69,7 +50,7 @@ const server = http.createServer(function(req, res) {
       console.log('Server is listening on port ' + port)
       }
       })
-       */
+       
       const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
